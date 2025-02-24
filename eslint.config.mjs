@@ -32,7 +32,7 @@ const jsdocTsRules = {
 /**
  * Specific rules for jsdoc plugin onn plain JS files
  */
-const jsDocJsRules = {
+const jsdocJsRules = {
     ...jsdocTsRules,
     'jsdoc/no-types': 0,
 };
@@ -177,7 +177,7 @@ export default tseslint.config(
     {
         plugins: { jsdoc },
         files: JS_SELECTOR,
-        rules: jsDocJsRules,
+        rules: jsdocJsRules,
     },
     {
         plugins: { jsdoc },
