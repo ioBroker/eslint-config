@@ -10,7 +10,7 @@ import reactHooksPlugin from 'eslint-plugin-react-hooks';
 /**
  * Rules for all JSDOC plugin usages
  */
-const jsdocRules = {
+const jsdocBaseRules = {
     'jsdoc/require-returns': 0,
     'jsdoc/tag-lines': ['error', 'never', { startLines: 1 }],
     'jsdoc/no-blank-blocks': ['error', { enableFixer: true }],
@@ -22,6 +22,11 @@ const jsdocRules = {
             contexts: ['TSInterfaceDeclaration', 'TSMethodSignature', 'TSPropertySignature'],
         },
     ],
+};
+
+const jsDocJsRules = {
+    ...jsdocBaseRules,
+    'jsdoc/no-types': 0,
 };
 
 /**
@@ -138,14 +143,14 @@ const tsRules = {
     '@typescript-eslint/consistent-type-exports': 'error',
 };
 
-/** Separate config for .js, *.cjs and *.mjs files which is applied internally */
+/** Separate config for .js, .cjs and .mjs files which is applied internally */
 const plainJsConfig = {
     ...tseslint.configs.disableTypeChecked,
     rules: {
         ...tseslint.configs.disableTypeChecked.rules,
         '@typescript-eslint/no-require-imports': 'off',
-    }
-}
+    },
+};
 
 /** @type {import("eslint").Linter.FlatConfig[]} */
 export default tseslint.config(
@@ -163,7 +168,13 @@ export default tseslint.config(
     },
     {
         plugins: { jsdoc },
-        rules: jsdocRules,
+        files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+        rules: jsDocJsRules,
+    },
+    {
+        plugins: { jsdoc },
+        files: ['**/*.ts', '**/*.tsx'],
+        rules: jsdocBaseRules,
     },
     {
         rules: generalRules,
@@ -173,7 +184,7 @@ export default tseslint.config(
         rules: tsRules,
     },
     {
-        files: ['**/*.js', '**/*.cjs', '**/*.mjs' ],
+        files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
         ...plainJsConfig,
     },
 );
