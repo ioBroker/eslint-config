@@ -7,10 +7,15 @@ import globals from 'globals';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
+/** Glob patterns for TypeScript rules */
+const TS_SELECTOR = ['**/*.ts', '**/*.tsx'];
+/** Glob patterns for JavaScript rules */
+const JS_SELECTOR = ['**/*.js', '**/*.cjs', '**/*.mjs'];
+
 /**
- * Rules for all JSDOC plugin usages
+ * Rules for JSDOC plugin usages on TypeScript files
  */
-const jsdocBaseRules = {
+const jsdocTsRules = {
     'jsdoc/require-returns': 0,
     'jsdoc/tag-lines': ['error', 'never', { startLines: 1 }],
     'jsdoc/no-blank-blocks': ['error', { enableFixer: true }],
@@ -24,8 +29,11 @@ const jsdocBaseRules = {
     ],
 };
 
+/**
+ * Specific rules for jsdoc plugin onn plain JS files
+ */
 const jsDocJsRules = {
-    ...jsdocBaseRules,
+    ...jsdocTsRules,
     'jsdoc/no-types': 0,
 };
 
@@ -168,23 +176,23 @@ export default tseslint.config(
     },
     {
         plugins: { jsdoc },
-        files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+        files: JS_SELECTOR,
         rules: jsDocJsRules,
     },
     {
         plugins: { jsdoc },
-        files: ['**/*.ts', '**/*.tsx'],
-        rules: jsdocBaseRules,
+        files: TS_SELECTOR,
+        rules: jsdocTsRules,
     },
     {
         rules: generalRules,
     },
     {
-        files: ['**/*.ts', '**/*.tsx'],
+        files: TS_SELECTOR,
         rules: tsRules,
     },
     {
-        files: ['**/*.js', '**/*.cjs', '**/*.mjs'],
+        files: JS_SELECTOR,
         ...plainJsConfig,
     },
 );
