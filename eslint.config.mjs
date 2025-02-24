@@ -7,10 +7,15 @@ import globals from 'globals';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 
+/** Glob patterns for TypeScript rules */
+const TS_SELECTOR = ['**/*.ts', '**/*.tsx'];
+/** Glob patterns for JavaScript rules */
+const JS_SELECTOR = ['**/*.js', '**/*.cjs', '**/*.mjs'];
+
 /**
- * Rules for all JSDOC plugin usages
+ * Rules for JSDOC plugin usages on TypeScript files
  */
-const jsdocRules = {
+const jsdocTsRules = {
     'jsdoc/require-returns': 0,
     'jsdoc/tag-lines': ['error', 'never', { startLines: 1 }],
     'jsdoc/no-blank-blocks': ['error', { enableFixer: true }],
@@ -22,6 +27,14 @@ const jsdocRules = {
             contexts: ['TSInterfaceDeclaration', 'TSMethodSignature', 'TSPropertySignature'],
         },
     ],
+};
+
+/**
+ * Specific rules for jsdoc plugin onn plain JS files
+ */
+const jsdocJsRules = {
+    ...jsdocTsRules,
+    'jsdoc/no-types': 0,
 };
 
 /**
@@ -138,14 +151,14 @@ const tsRules = {
     '@typescript-eslint/consistent-type-exports': 'error',
 };
 
-/** Separate config for .js, *.cjs and *.mjs files which is applied internally */
+/** Separate config for .js, .cjs and .mjs files which is applied internally */
 const plainJsConfig = {
     ...tseslint.configs.disableTypeChecked,
     rules: {
         ...tseslint.configs.disableTypeChecked.rules,
         '@typescript-eslint/no-require-imports': 'off',
-    }
-}
+    },
+};
 
 /** @type {import("eslint").Linter.FlatConfig[]} */
 export default tseslint.config(
@@ -163,17 +176,23 @@ export default tseslint.config(
     },
     {
         plugins: { jsdoc },
-        rules: jsdocRules,
+        files: JS_SELECTOR,
+        rules: jsdocJsRules,
+    },
+    {
+        plugins: { jsdoc },
+        files: TS_SELECTOR,
+        rules: jsdocTsRules,
     },
     {
         rules: generalRules,
     },
     {
-        files: ['**/*.ts', '**/*.tsx'],
+        files: TS_SELECTOR,
         rules: tsRules,
     },
     {
-        files: ['**/*.js', '**/*.cjs', '**/*.mjs' ],
+        files: JS_SELECTOR,
         ...plainJsConfig,
     },
 );
