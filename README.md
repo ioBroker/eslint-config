@@ -53,6 +53,10 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+- (@GermanBluefox) Some eslint packages were updated with major version
+
 ### 1.0.0 (2024-11-17)
 
 -   (@GermanBluefox) Added `no-duplicate-imports` rule
