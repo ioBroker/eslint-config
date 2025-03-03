@@ -54,12 +54,11 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   ### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS**
+### 2.0.0-beta (2025-03-03)
 
 -   (@GermanBluefox) Some eslint packages were updated with major version
 -   (@foxriver76) Disable `jsdoc/no-types` off for non-TypeScript files
 -   (@mcm1957) Apply JavaScript rules also to `.mjs` and `.cjs` files
-
 
 ### 1.0.0 (2024-11-17)
 
