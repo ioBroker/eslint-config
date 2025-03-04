@@ -1,6 +1,6 @@
 {
   "name": "@iobroker/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Eslint config of ioBroker",
   "homepage": "https://github.com/ioBroker/ioBroker.eslint-config",
   "main": "eslint.config.mjs",
