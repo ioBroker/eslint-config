@@ -55,7 +55,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
 -->
 ### **WORK IN PROGRESS**
 
--   (@GermanBluefox) Some eslint packages were updated with major version (typescript 5.8)
+-   (@GermanBluefox) Some eslint packages were updated with major version (TypeScript 5.8)
 
 ### 1.0.1 (2025-03-04)
 
