@@ -53,10 +53,12 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
 ### **WORK IN PROGRESS**
 
 -   (@GermanBluefox) Some eslint packages were updated with major version (typescript 5.8)
+
+### 1.0.1 (2025-03-04)
+
 -   (@foxriver76) Disable `jsdoc/no-types` off for non-TypeScript files
 -   (@mcm1957) Apply JavaScript rules also to `.mjs` and `.cjs` files
 
