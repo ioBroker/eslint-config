@@ -53,7 +53,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.0.0 (2025-03-04)
 
 -   (@GermanBluefox) Some eslint packages were updated with major version (TypeScript 5.8)
 
