@@ -55,7 +55,8 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
               '*.test.js', 
               'test/**/*.js', 
               '*.config.mjs', 
-              'build', 
+              'build/**/*',
+              'dist/**/*',
               'admin/build', 
               'admin/words.js',
               'admin/admin.d.ts',
@@ -68,6 +69,7 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
           // as this improves maintainability. jsdoc warnings will not block buiuld process.
           rules: {
               // 'jsdoc/require-jsdoc': 'off',
+              // 'jsdoc/require-param': 'off',
           },
       },
       
