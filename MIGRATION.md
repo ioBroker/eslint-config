@@ -15,6 +15,8 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
       npm uninstall eslint
       npm uninstall eslint-config-prettier
       npm uninstall eslint-plugin-prettier
+      npm uninstall @eslint/eslintrc
+      npm uninstall @eslint/js
       npm uninstall prettier
 
 - [ ] remove all other eslint / prettier packages you do not plan to add to you personal configuration later
@@ -37,7 +39,7 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
       .eslintrc.json
       .prettierignore
       .prettierrc.js
-      
+
 - [ ] create new configuration file `eslint.config.mjs` for ESLint in the root directory of the repository
   ```js
   // ioBroker eslint template configuration file for js and ts files
@@ -46,33 +48,34 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
   
   export default [
       ...config,
-  
       {
           // specify files to exclude from linting here
           ignores: [
               '.dev-server/',
               '.vscode/',
-              '*.test.js', 
-              'test/**/*.js', 
-              '*.config.mjs', 
-              'build', 
-              'admin/build', 
+              '*.test.js',
+              'test/**/*.js',
+              '*.config.mjs',
+              'build',
+              'admin/build',
               'admin/words.js',
               'admin/admin.d.ts',
-              '**/adapter-config.d.ts'     
-          ] 
+              'admin/blockly.js',
+              '**/adapter-config.d.ts',
+          ],
       },
-  
       {
           // you may disable some 'jsdoc' warnings - but using jsdoc is highly recommended
           // as this improves maintainability. jsdoc warnings will not block buiuld process.
           rules: {
               // 'jsdoc/require-jsdoc': 'off',
+              // 'jsdoc/require-param-description': 'off',
+              // 'jsdoc/require-returns-description': 'off',
+              // 'jsdoc/require-returns-check': 'off',
           },
       },
-      
   ];
-   ```
+  ```
   
 - [ ] create new configuration file `prettier.config.mjs` for Prettier in the root directory of the repository
   ```js
