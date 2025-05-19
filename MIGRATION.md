@@ -57,7 +57,7 @@ The steps are valid for vanilla Javascript and TypeScript repositories. If you a
               'test/**/*.js',
               '*.config.mjs',
               'build/**/*',
-              'dist/**/*',
+              'dist/**',
               'admin/build', 
               'admin/words.js',
               'admin/admin.d.ts',
