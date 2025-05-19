@@ -53,6 +53,12 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+-   (mcm1957) typescript peerDependency has been removed
+  
+
 ### 2.0.1 (2025-03-10)
 
 -   (@foxriver76) make prettier peer dependency `>=`
