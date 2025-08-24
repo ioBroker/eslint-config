@@ -53,8 +53,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### __WORK IN PROGRESS__
+### 2.1.0 (2025-08-24)
 
 -   (@Apollon77) Update packages to allow to use typescript 5.9.x
 
