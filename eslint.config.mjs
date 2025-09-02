@@ -6,6 +6,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import globals from 'globals';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import importPlugin from 'eslint-plugin-import';
 
 /** Glob patterns for TypeScript rules */
 const TS_SELECTOR = ['**/*.ts', '**/*.tsx'];
@@ -57,7 +58,8 @@ const generalRules = {
     // https://eslint.org/docs/latest/rules/prefer-template
     // Enforce the use of template literals instead of string concatenation: "Hello, " + name + "!" => `Hello, ${name}!`
     'prefer-template': 'error',
-    'no-duplicate-imports': 'error',
+    'no-duplicate-imports': 'off',
+    'import/no-duplicates': 'error',
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-vars': [
@@ -175,16 +177,25 @@ export default tseslint.config(
         },
     },
     {
-        plugins: { jsdoc },
+        plugins: { 
+            jsdoc,
+            import: importPlugin,
+        },
         files: JS_SELECTOR,
         rules: jsdocJsRules,
     },
     {
-        plugins: { jsdoc },
+        plugins: { 
+            jsdoc,
+            import: importPlugin,
+        },
         files: TS_SELECTOR,
         rules: jsdocTsRules,
     },
     {
+        plugins: {
+            import: importPlugin,
+        },
         rules: generalRules,
     },
     {
@@ -202,7 +213,10 @@ export default tseslint.config(
  */
 export const esmConfig = [
     {
-        plugins: { unicorn: eslintPluginUnicorn },
+        plugins: { 
+            unicorn: eslintPluginUnicorn,
+            import: importPlugin,
+        },
         rules: unicornRules,
     },
 ];
@@ -215,6 +229,7 @@ export const reactConfig = [
         plugins: {
             react: reactPlugin,
             'react-hooks': reactHooksPlugin,
+            import: importPlugin,
         },
         rules: {
             ...reactPlugin.configs.recommended.rules,
