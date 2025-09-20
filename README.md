@@ -53,7 +53,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-### __WORK IN PROGRESS__
+### 2.2.0 (2025-09-20)
 
 -   (@Apollon77/copilot) Adjust rules to allow to split type and normal imports for the same module in two lines
 
