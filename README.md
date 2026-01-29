@@ -54,7 +54,16 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   ### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
--   (@GermanBluefox) `eslint-plugin-react-hooks` was updated to version 7
+   
+- (@GermanBluefox) `eslint-plugin-react-hooks` was updated to version 7
+
+### 2.2.0 (2025-09-20)
+
+-   (@Apollon77/copilot) Adjust rules to allow to split type and normal imports for the same module in two lines
+
+### 2.1.0 (2025-08-24)
+
+-   (@Apollon77) Update packages to allow to use typescript 5.9.x
 
 ### 2.0.3 (2025-08-03)
 
@@ -71,7 +80,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
 
 ### 2.0.0 (2025-03-04)
 
--   (@GermanBluefox) Some eslint packages were updated with a major version (TypeScript 5.8)
+-   (@GermanBluefox) Some eslint packages were updated with major version (TypeScript 5.8)
 
 ### 1.0.1 (2025-03-04)
 
