@@ -53,6 +53,9 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+-   (@GermanBluefox) `eslint-plugin-react-hooks` was updated to version 7
+
 ### 2.0.3 (2025-08-03)
 
 -   (@GermanBluefox) Some packages were updated
