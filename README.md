@@ -53,13 +53,17 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+
+-   (@GermanBluefox) Some packages were updated to support TypeScript 6.0
+
 ### 2.2.0 (2025-09-20)
 
--   (@Apollon77/copilot) Adjust rules to allow to split type and normal imports for the same module in two lines
+-   (@Apollon77/copilot) Adjust rules to allow splitting type and normal imports for the same module in two lines
 
 ### 2.1.0 (2025-08-24)
 
--   (@Apollon77) Update packages to allow to use typescript 5.9.x
+-   (@Apollon77) Update packages to allow using TypeScript 5.9.x
 
 ### 2.0.3 (2025-08-03)
 
@@ -67,7 +71,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
 
 ### 2.0.2 (2025-05-20)
 
--   (mcm1957) typescript peerDependency has been removed
+-   (mcm1957) TypeScript peerDependency has been removed
 
 ### 2.0.1 (2025-03-10)
 
@@ -76,7 +80,7 @@ It is suggested to create separate `eslint.config.mjs` files for backend and for
 
 ### 2.0.0 (2025-03-04)
 
--   (@GermanBluefox) Some eslint packages were updated with major version (TypeScript 5.8)
+-   (@GermanBluefox) Some eslint packages were updated with a major version (TypeScript 5.8)
 
 ### 1.0.1 (2025-03-04)
 
