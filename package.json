@@ -2,6 +2,7 @@
   "name": "@iobroker/eslint-config",
   "version": "2.3.4",
   "description": "Eslint config of ioBroker",
+  "license": "MIT",
   "homepage": "https://github.com/ioBroker/eslint-config",
   "main": "eslint.config.mjs",
   "author": {
